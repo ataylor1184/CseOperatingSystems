@@ -1,0 +1,18 @@
+#!/bin/tcsh -f
+
+set fheaders=/user/cse410/Section2/Projects/project01.headers
+set ftest=/user/cse410/Section2/Projects/project01.data
+
+if ($#argv != 2) then
+	echo "Incorrect number of Arguments (Requires 2)"
+else if ($1 < 0) then
+	echo "Only positive integers are accepted"end
+else if  ("$2" != "NL" && "$2" != "AL") then
+	echo "please enter 'AL' or 'NL' for a baseball league"
+else
+	cat $fheaders
+	cat $ftest | grep $2 | sort -r -n -k 11 -k 12 -k 5| head -$1
+endif
+
+
+

@@ -1,0 +1,11 @@
+#!/bin/tcsh -f
+
+set fheaders=/user/cse410/Section2/Projects/project01.headers
+set ftest=/user/cse410/Section2/Projects/project01.data
+
+
+foreach param ($*)
+	cat $fheaders
+	cat $ftest | grep $param | sort -r -n -k 11 -k 5
+	echo "\n"
+end

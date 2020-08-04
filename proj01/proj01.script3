@@ -1,0 +1,8 @@
+#!/bin/tcsh -f
+
+set fheaders=/user/cse410/Section2/Projects/project01.headers
+set ftest=/user/cse410/Section2/Projects/project01.data
+cat $fheaders
+
+cat $ftest | grep $2 | sort -r -n -k 11 -k 12 -k 5| head -$1
+
